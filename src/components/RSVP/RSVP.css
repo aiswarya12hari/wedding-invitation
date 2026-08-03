@@ -2,7 +2,6 @@
 
 #rsvp {
   min-height: 100vh;
-  /* Dark plum background to match the image */
   background: #2d0d20; 
   display: flex;
   justify-content: center;
@@ -13,20 +12,19 @@
 
 .rsvp-container {
   width: 100%;
-  max-width: 450px; /* Narrower, elegant width */
+  max-width: 480px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .rsvp-title {
-  /* Ornate script font. Load 'Great Vibes' or 'Alex Brush' in index.html or your global css */
   font-family: "Great Vibes", "Brush Script MT", cursive;
   font-size: clamp(3.5rem, 10vw, 5rem);
-  color: #eaddcf; /* Cream / Gold */
+  color: #cba87b; /* Luxurious Gold */
   margin-bottom: 2rem;
   font-weight: 400;
-  text-shadow: 0 2px 10px rgba(255, 215, 0, 0.1);
+  text-shadow: 0 0 20px rgba(203, 168, 123, 0.15);
 }
 
 .input-group {
@@ -36,35 +34,38 @@
 
 .input-group label {
   display: block;
-  color: #cba87b; /* Muted gold/beige label */
-  font-size: 0.8rem;
-  letter-spacing: 2px;
+  color: #cba87b;
+  font-size: 0.75rem;
+  letter-spacing: 3px;
   text-transform: uppercase;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   font-weight: 600;
 }
 
 .input-group input {
   width: 100%;
-  background: #fcf7f0; /* Cream/white input */
-  border: none;
-  border-radius: 10px;
+  /* Glassmorphism Inputs */
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(203, 168, 123, 0.2);
+  border-radius: 12px;
   padding: 16px 20px;
   font-size: 1rem;
   font-family: inherit;
-  color: #4a3423;
+  color: #f5e6d3; /* Cream text */
   outline: none;
-  transition: box-shadow 0.3s ease;
+  transition: all 0.3s ease;
   box-sizing: border-box;
 }
 
 .input-group input::placeholder {
-  color: #cbbcb0;
+  color: rgba(255, 255, 255, 0.4);
   font-style: italic;
 }
 
 .input-group input:focus {
-  box-shadow: 0 0 0 3px rgba(203, 168, 123, 0.3);
+  border-color: #cba87b;
+  box-shadow: 0 0 15px rgba(203, 168, 123, 0.1);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .attending-group {
@@ -75,27 +76,28 @@
 
 .attending-btn {
   flex: 1;
-  padding: 12px 0;
-  border-radius: 30px; /* Pill shape */
-  border: 1px solid #cfd1d2;
-  background: #fcf7f0; /* Default inactive: Cream background */
-  color: #4a3423;
+  padding: 14px 0;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+  color: #eaddcf;
   font-size: 0.9rem;
   font-family: inherit;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.attending-btn.active-accept {
-  background: #982b4c; /* Dark deep red */
-  color: #fcf7f0;
-  border-color: #982b4c;
+.attending-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
 }
 
+/* Active State for Both Accept and Decline */
+.attending-btn.active-accept,
 .attending-btn.active-decline {
   background: #982b4c;
   color: #fcf7f0;
   border-color: #982b4c;
+  box-shadow: 0 4px 15px rgba(152, 43, 76, 0.3);
 }
 
 .submit-btn {
@@ -103,9 +105,9 @@
   padding: 18px;
   margin-top: 10px;
   border: none;
-  background: #982b4c; /* Dark red like the image */
+  background: #982b4c;
   color: white;
-  border-radius: 30px; /* Pill shape */
+  border-radius: 30px;
   font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
@@ -130,11 +132,18 @@
   color: #eaddcf;
   font-size: 1rem;
   text-align: center;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* Mobile tweaks */
 @media (max-width: 400px) {
   .attending-group {
     flex-direction: column;
+    gap: 10px;
   }
 }

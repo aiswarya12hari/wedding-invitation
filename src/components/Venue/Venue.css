@@ -1,75 +1,94 @@
 /* src/components/Venue/Venue.css */
 
 #venue {
-  /* Changed to 100dvh to properly handle mobile navigation bars */
-  min-height: 100dvh; 
-  background: #f8f4ef;
+  min-height: 100dvh;
+  /* MATCH THE PLUM THEME OF YOUR WEBSITE */
+  background: #2d0d20; 
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px 20px; /* Responsive outer padding */
+  padding: 40px 20px;
   box-sizing: border-box;
 }
 
 .venue-card {
   width: 100%;
   max-width: 700px;
-  background: white;
-  /* Fluid padding: scales from 30px on mobile up to 50px on desktop */
-  padding: clamp(30px, 6vw, 50px); 
+  /* TRANSLUCENT GLASS EFFECT */
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(203, 168, 123, 0.2);
+  backdrop-filter: blur(4px);
+  padding: clamp(30px, 6vw, 50px);
   border-radius: 20px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
   text-align: center;
-  box-sizing: border-box; /* Ensures padding doesn't increase the width */
+  box-sizing: border-box;
 }
 
 .venue-title {
-  color: #c8a96a;
-  letter-spacing: 5px;
+  color: #cba87b; /* Muted elegant gold */
+  letter-spacing: 6px;
   margin-bottom: 20px;
-  /* Fluid font size */
   font-size: clamp(12px, 1.5vw, 14px);
+  text-transform: uppercase;
 }
 
 .venue-card h2 {
   font-family: "Playfair Display", serif;
-  /* Fluid font: Starts at 28px on mobile, grows to 42px on desktop */
-  font-size: clamp(1.75rem, 5vw, 2.625rem); 
-  color: #4d3425;
-  margin-bottom: 25px;
+  font-size: clamp(1.75rem, 5vw, 2.625rem);
+  color: #f5e6d3; /* Cream/Off-white */
+  margin-bottom: 20px;
   line-height: 1.2;
 }
 
 .venue-description {
-  color: #666;
+  color: #d1c5b9;
   line-height: 1.8;
   margin-bottom: 30px;
   font-size: clamp(15px, 1.8vw, 17px);
 }
 
+.venue-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
 .venue-info p {
-  margin: 12px 0;
-  /* Fluid font size for info text */
-  font-size: clamp(15px, 1.8vw, 18px);
-  word-break: break-word; /* Prevents long text from breaking layout on small screens */
+  margin: 0;
+  font-size: clamp(14px, 1.8vw, 17px);
+  color: #f5e6d3;
+  /* ELEGANT PILL TAGS FOR INFO */
+  background: rgba(255, 255, 255, 0.05);
+  padding: 12px 20px;
+  border-radius: 30px;
+  border: 1px solid rgba(203, 168, 123, 0.1);
+}
+
+.venue-info p strong {
+  color: #cba87b;
 }
 
 .direction-btn {
   margin-top: 30px;
-  /* Fluid padding for the button */
-  padding: clamp(12px, 2vw, 15px) clamp(25px, 5vw, 40px);
-  background: #c8a96a;
+  padding: clamp(12px, 2vw, 15px) clamp(30px, 5vw, 45px);
+  /* MATCHES THE RSVP BUTTON STYLE */
+  background: #982b4c; 
   color: white;
   border: none;
   border-radius: 30px;
   cursor: pointer;
   font-size: clamp(14px, 1.5vw, 16px);
+  font-weight: 600;
   transition: all 0.3s ease;
   display: inline-block;
-  text-decoration: none; /* In case you switch to an anchor tag directly */
+  text-decoration: none;
 }
 
 .direction-btn:hover {
-  background: #b18e52;
-  transform: translateY(-2px); /* Adds a subtle lift on hover for luxury feel */
+  background: #7a223d;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(152, 43, 76, 0.4);
 }

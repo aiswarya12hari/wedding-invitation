@@ -22,10 +22,9 @@ function Venue() {
         <div className="venue-info">
           <p>📅 <strong>Date:</strong> 23 August 2026</p>
           <p>🕘 <strong>Time:</strong> 10:30 AM</p>
-          <p>📍 <strong>Location:</strong> Kodunthirapully, Pirayiri, Palakkad</p>
+          <p>📍 <strong>Location:</strong> Kodunthirapully, Pirayiri</p>
         </div>
 
-        {/* Better: An anchor styled directly as a button */}
         <a
           href="https://maps.google.com/?q=Anugraha+Kalyanamandapam+Kodunthirapully+Palakkad"
           target="_blank"

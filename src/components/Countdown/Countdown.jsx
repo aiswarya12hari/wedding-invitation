@@ -55,22 +55,22 @@ function Countdown() {
       <div className="timer-box">
 
         <div className="time-card">
-          <h2>{timeLeft.days}</h2>
+          <h2 key={timeLeft.days}>{timeLeft.days}</h2>
           <span>DAYS</span>
         </div>
 
         <div className="time-card">
-          <h2>{timeLeft.hours}</h2>
+          <h2 key={timeLeft.hours}>{timeLeft.hours}</h2>
           <span>HOURS</span>
         </div>
 
         <div className="time-card">
-          <h2>{timeLeft.minutes}</h2>
+          <h2 key={timeLeft.minutes}>{timeLeft.minutes}</h2>
           <span>MINUTES</span>
         </div>
 
         <div className="time-card">
-          <h2>{timeLeft.seconds}</h2>
+          <h2 key={timeLeft.seconds}>{timeLeft.seconds}</h2>
           <span>SECONDS</span>
         </div>
 
