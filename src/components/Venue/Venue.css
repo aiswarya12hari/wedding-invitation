@@ -1,0 +1,58 @@
+#venue {
+  min-height: 100vh;
+  background: #f8f4ef;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+}
+
+.venue-card {
+  max-width: 700px;
+  background: white;
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,.1);
+  text-align: center;
+}
+
+.venue-title {
+  color: #c8a96a;
+  letter-spacing: 5px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.venue-card h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 42px;
+  color: #4d3425;
+  margin-bottom: 25px;
+}
+
+.venue-description {
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.venue-info p {
+  margin: 12px 0;
+  font-size: 18px;
+}
+
+.direction-btn {
+  margin-top: 30px;
+  padding: 15px 40px;
+  background: #c8a96a;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.direction-btn:hover {
+  background: #b18e52;
+}
