@@ -1,9 +1,7 @@
-/* src/components/Venue/Venue.css */
-
 #venue {
   min-height: 100dvh;
-  /* MATCH THE PLUM THEME OF YOUR WEBSITE */
-  background: #2d0d20; 
+  /* 🟡 CHANGED: A warm, bright cream background for the venue section */
+  background: #f8f4ef; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,19 +12,18 @@
 .venue-card {
   width: 100%;
   max-width: 700px;
-  /* TRANSLUCENT GLASS EFFECT */
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(203, 168, 123, 0.2);
-  backdrop-filter: blur(4px);
+  /* 🟡 CHANGED: Clean, crisp white card for the venue */
+  background: #ffffff;
+  border: 1px solid rgba(203, 168, 123, 0.3);
+  box-shadow: 0 15px 35px rgba(203, 168, 123, 0.15); /* Soft gold shadow */
   padding: clamp(30px, 6vw, 50px);
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
   text-align: center;
   box-sizing: border-box;
 }
 
 .venue-title {
-  color: #cba87b; /* Muted elegant gold */
+  color: #c8a96a; /* Gold title */
   letter-spacing: 6px;
   margin-bottom: 20px;
   font-size: clamp(12px, 1.5vw, 14px);
@@ -36,13 +33,14 @@
 .venue-card h2 {
   font-family: "Playfair Display", serif;
   font-size: clamp(1.75rem, 5vw, 2.625rem);
-  color: #f5e6d3; /* Cream/Off-white */
+  /* 🟡 CHANGED: Dark plum text to match the branding, stands out beautifully on white */
+  color: #2d0d20; 
   margin-bottom: 20px;
   line-height: 1.2;
 }
 
 .venue-description {
-  color: #d1c5b9;
+  color: #666666; /* Soft grey for descriptions */
   line-height: 1.8;
   margin-bottom: 30px;
   font-size: clamp(15px, 1.8vw, 17px);
@@ -59,23 +57,22 @@
 .venue-info p {
   margin: 0;
   font-size: clamp(14px, 1.8vw, 17px);
-  color: #f5e6d3;
-  /* ELEGANT PILL TAGS FOR INFO */
-  background: rgba(255, 255, 255, 0.05);
+  color: #2d0d20; /* Dark plum text */
+  /* 🟡 CHANGED: Cream background tags instead of transparent dark glass */
+  background: #f4ede8;
   padding: 12px 20px;
   border-radius: 30px;
   border: 1px solid rgba(203, 168, 123, 0.1);
 }
 
 .venue-info p strong {
-  color: #cba87b;
+  color: #c8a96a; /* Gold accents */
 }
 
 .direction-btn {
   margin-top: 30px;
   padding: clamp(12px, 2vw, 15px) clamp(30px, 5vw, 45px);
-  /* MATCHES THE RSVP BUTTON STYLE */
-  background: #982b4c; 
+  background: #982b4c; /* Matches your RSVP button perfectly */
   color: white;
   border: none;
   border-radius: 30px;
