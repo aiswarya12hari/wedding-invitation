@@ -33,23 +33,29 @@
     padding: 60px 80px;
 
     border-radius: 10px;
+
+    width: 90%;
+    max-width: 600px;
 }
 
 .hero-content h2 {
 
     margin: 10px 0;
+    font-size: clamp(20px, 4vw, 28px);
 
 }
 
 .hero-content h1 {
 
     margin: 20px 0;
+    font-size: clamp(28px, 6vw, 48px);
 
 }
 
 .date {
 
     margin-top: 20px;
+    font-size: clamp(14px, 2.5vw, 18px);
 
 }
 
@@ -90,4 +96,23 @@
     color: #D4AF37;
     letter-spacing: 4px;
     margin-bottom: 25px;
+    font-size: clamp(11px, 2vw, 14px);
+}
+
+@media (max-width: 480px) {
+
+    .hero-content {
+        padding: 40px 24px;
+    }
+
+    .hero-content button {
+        padding: 12px 32px;
+        font-size: 15px;
+    }
+
+    .save-date {
+        letter-spacing: 2px;
+        padding: 8px 18px;
+    }
+
 }

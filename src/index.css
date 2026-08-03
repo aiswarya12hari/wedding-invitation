@@ -6,8 +6,13 @@
     box-sizing:border-box;
 }
 
+:root{
+    --container-width: 1200px;
+}
+
 html{
     scroll-behavior:smooth;
+    font-size:100%; /* 1rem = 16px, base for responsive sizing */
 }
 
 body{
