@@ -1,0 +1,31 @@
+.confetti-burst-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none; /* Users can still scroll normally */
+  z-index: 999; /* Ensures it pops on TOP of everything, even the envelope */
+  overflow: hidden;
+}
+
+.confetti-piece {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: linear-gradient(135deg, #ffdf73, #d4af37); /* Shiny gold gradient */
+  border-radius: 2px; /* Slight rectangle edges for ribbon effect */
+  opacity: 0;
+  animation: popExplode cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes popExplode {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--x), var(--y)) rotate(var(--rotate)) scale(0.8);
+  }
+}

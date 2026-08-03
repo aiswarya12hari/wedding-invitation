@@ -1,53 +1,71 @@
+/* src/components/Countdown/Countdown.css */
+
 #countdown {
-  min-height: 100vh;
+  /* Changed to 100dvh to account for mobile browser address bars (no stretching!) */
+  min-height: 100dvh; 
   background: #5b4032;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: white;
+  padding: 20px; /* Prevents content from touching edges on tiny screens */
+  box-sizing: border-box;
 }
 
 .count-title {
   color: #d4af37;
   letter-spacing: 5px;
-  font-size: 14px;
+  font-size: clamp(0.8rem, 2vw, 1rem); /* Shrinks on mobile, grows on desktop */
   margin-bottom: 15px;
 }
 
 .big-day {
   font-family: "Playfair Display", serif;
-  font-size: 60px;
-  margin-bottom: 50px;
+  /* Responsive font-size that scales perfectly with screen size */
+  font-size: clamp(2.5rem, 7vw, 4rem); 
+  margin-bottom: 30px;
+  text-align: center;
 }
 
 .timer-box {
   display: flex;
-  gap: 50px;
-  background: rgba(255,255,255,0.08);
-  padding: 50px 70px;
+  gap: clamp(20px, 4vw, 50px); /* Responsive gap */
+  padding: clamp(20px, 3vw, 50px) clamp(20px, 4vw, 70px);
+  background: rgba(255, 255, 255, 0.08);
   border-radius: 20px;
-  border: 1px solid rgba(212,175,55,0.3);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  flex-wrap: wrap; /* CRITICAL: Allows the numbers to wrap to the next row on mobile */
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 800px; /* Prevents it from becoming too wide on huge screens */
+  box-sizing: border-box;
 }
 
 .time-card {
   text-align: center;
+  /* Ensures each card takes roughly half the width on mobile (creating a 2x2 grid) */
+  flex: 1 0 auto; 
+  min-width: 70px; 
 }
 
 .time-card h2 {
-  font-size: 70px;
+  /* Fluid typography: 2.5rem (~40px) on mobile, up to 4.375rem (~70px) on desktop */
+  font-size: clamp(2.5rem, 10vw, 4.375rem);
   color: white;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+  line-height: 1; /* Prevents vertical stretching */
 }
 
 .time-card span {
   color: #d4af37;
-  font-size: 13px;
+  font-size: clamp(0.75rem, 1.5vw, 0.9rem); /* Adjust label size */
   letter-spacing: 3px;
 }
 
 .event-date {
-  margin-top: 50px;
-  font-size: 20px;
+  margin-top: 40px;
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
   color: #ddd;
 }

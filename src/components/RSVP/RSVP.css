@@ -1,59 +1,140 @@
+/* src/components/RSVP/RSVP.css */
+
 #rsvp {
   min-height: 100vh;
-  background: #fffaf5;
+  /* Dark plum background to match the image */
+  background: #2d0d20; 
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 60px 20px;
+  padding: 40px 20px;
+  box-sizing: border-box;
 }
 
 .rsvp-container {
   width: 100%;
-  max-width: 650px;
-  background: white;
-  padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-}
-
-.rsvp-container h2 {
-  text-align: center;
-  font-size: 42px;
-  font-family: "Playfair Display", serif;
-  margin-bottom: 10px;
-}
-
-.rsvp-container p {
-  text-align: center;
-  color: #666;
-  margin-bottom: 30px;
-}
-
-.rsvp-container form {
+  max-width: 450px; /* Narrower, elegant width */
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  align-items: center;
 }
 
-.rsvp-container input,
-.rsvp-container textarea,
-.rsvp-container select {
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  font-size: 16px;
+.rsvp-title {
+  /* Ornate script font. Load 'Great Vibes' or 'Alex Brush' in index.html or your global css */
+  font-family: "Great Vibes", "Brush Script MT", cursive;
+  font-size: clamp(3.5rem, 10vw, 5rem);
+  color: #eaddcf; /* Cream / Gold */
+  margin-bottom: 2rem;
+  font-weight: 400;
+  text-shadow: 0 2px 10px rgba(255, 215, 0, 0.1);
 }
 
-.rsvp-container button {
-  padding: 15px;
+.input-group {
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.input-group label {
+  display: block;
+  color: #cba87b; /* Muted gold/beige label */
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.input-group input {
+  width: 100%;
+  background: #fcf7f0; /* Cream/white input */
   border: none;
-  background: #c8a96a;
-  color: white;
   border-radius: 10px;
-  font-size: 18px;
-  cursor: pointer;
+  padding: 16px 20px;
+  font-size: 1rem;
+  font-family: inherit;
+  color: #4a3423;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+  box-sizing: border-box;
 }
 
-.rsvp-container button:hover {
-  background: #b79250;
+.input-group input::placeholder {
+  color: #cbbcb0;
+  font-style: italic;
+}
+
+.input-group input:focus {
+  box-shadow: 0 0 0 3px rgba(203, 168, 123, 0.3);
+}
+
+.attending-group {
+  display: flex;
+  gap: 15px;
+  width: 100%;
+}
+
+.attending-btn {
+  flex: 1;
+  padding: 12px 0;
+  border-radius: 30px; /* Pill shape */
+  border: 1px solid #cfd1d2;
+  background: #fcf7f0; /* Default inactive: Cream background */
+  color: #4a3423;
+  font-size: 0.9rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.attending-btn.active-accept {
+  background: #982b4c; /* Dark deep red */
+  color: #fcf7f0;
+  border-color: #982b4c;
+}
+
+.attending-btn.active-decline {
+  background: #982b4c;
+  color: #fcf7f0;
+  border-color: #982b4c;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 18px;
+  margin-top: 10px;
+  border: none;
+  background: #982b4c; /* Dark red like the image */
+  color: white;
+  border-radius: 30px; /* Pill shape */
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background: #7a223d;
+  transform: translateY(-2px);
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.status-msg {
+  margin-top: 20px;
+  color: #eaddcf;
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* Mobile tweaks */
+@media (max-width: 400px) {
+  .attending-group {
+    flex-direction: column;
+  }
 }

@@ -25,14 +25,14 @@ function Venue() {
           <p>📍 <strong>Location:</strong> Kodunthirapully, Pirayiri, Palakkad</p>
         </div>
 
+        {/* Better: An anchor styled directly as a button */}
         <a
           href="https://maps.google.com/?q=Anugraha+Kalyanamandapam+Kodunthirapully+Palakkad"
           target="_blank"
           rel="noopener noreferrer"
+          className="direction-btn"
         >
-          <button className="direction-btn">
-            Get Directions
-          </button>
+          Get Directions
         </a>
 
       </div>

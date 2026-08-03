@@ -1,23 +1,24 @@
-import "./InvitationCover.css";
-import coverImage from "../../assets/images/envelope.png";
+import React from 'react';
+import './InvitationCover.css';
+import envelopeImg from '../../assets/images/envelope.png'; 
 
-function InvitationCover({ onOpen }) {
+const InvitationCover = ({ onOpen }) => {
   return (
-    <div className="cover">
-      <img
-        src={coverImage}
-        alt="Wedding Invitation"
-        className="cover-image"
+    <div className="invitation-cover-wrapper">
+      <img 
+        src={envelopeImg} 
+        alt="Wedding Invitation Envelope" 
+        className="envelope-image" 
       />
-
-      <button
-        className="open-btn"
+      <button 
+        className="open-envelope-button" 
         onClick={onOpen}
+        aria-label="Tap to open invitation"
       >
-        TAP TO OPEN
+        <span className="button-text">TAP TO OPEN</span>
       </button>
     </div>
   );
-}
+};
 
 export default InvitationCover;

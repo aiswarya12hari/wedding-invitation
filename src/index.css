@@ -1,33 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+/* src/index.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-:root{
-    --container-width: 1200px;
-}
-
-html{
-    scroll-behavior:smooth;
-    font-size:100%;
-    overflow-x:hidden;
-}
-
-body{
-
-    font-family:'Poppins',sans-serif;
-
-    overflow-x:hidden;
-
-    background:#ffffff;
-
-}
-
-#root{
-
-    width:100%;
-
+html, body, #root {
+  width: 100%;
+  /* Remove 'height: 100%' if you want it to naturally expand with content */
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #452538; 
+  /* 🔴 REMOVE 'overflow: hidden' HERE! */
 }

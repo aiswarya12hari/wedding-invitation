@@ -1,118 +1,73 @@
-.hero {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
+.hero-section {
+  min-height: 100vh;
+  background: linear-gradient(rgba(45, 13, 32, 0.8), rgba(45, 13, 32, 0.4)), 
+              url('../../assets/images/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-.hero-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.45);
-}
-
-/* Hero Content */
 .hero-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: white;
-    z-index: 2;
-
-    /* Premium Gold Border */
-    border: 1px solid rgba(212, 175, 55, 0.5);
-
-    padding: 60px 80px;
-
-    border-radius: 10px;
-
-    width: 90%;
-    max-width: 600px;
+  max-width: 800px;
 }
 
-.hero-content h2 {
-
-    margin: 10px 0;
-    font-size: clamp(20px, 4vw, 28px);
-
+/* --- Staggered Animation (Fade In Up) --- */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease forwards;
 }
 
-.hero-content h1 {
+.hero-greeting { animation-delay: 0.2s; }
+.hero-title   { animation-delay: 0.5s; }
+.hero-date    { animation-delay: 0.8s; }
 
-    margin: 20px 0;
-    font-size: clamp(28px, 6vw, 48px);
-
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.date {
-
-    margin-top: 20px;
-    font-size: clamp(14px, 2.5vw, 18px);
-
+/* --- Typography --- */
+.hero-greeting {
+  color: #eaddcf;
+  font-size: 1.2rem;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
 }
 
-.hero-content button {
-
-    margin-top: 25px;
-
-    padding: 15px 45px;
-
-    background: #C8A96A;
-
-    color: white;
-
-    border: none;
-
-    border-radius: 30px;
-
-    cursor: pointer;
-
-    font-size: 18px;
-
-    transition: .3s;
+.hero-title {
+  font-family: "Great Vibes", "Playfair Display", serif;
+  font-size: clamp(3.5rem, 10vw, 5.5rem);
+  font-weight: 400;
+  margin-bottom: 30px;
+  /* Gold to Cream gradient for the names */
+  background: linear-gradient(to right, #f5e6d3 0%, #d4af37 40%, #f5e6d3 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% auto;
 }
 
-.hero-content button:hover {
-
-    background: #b8934f;
-
-    transform: scale(1.05);
-
+/* --- Pro UI Trick: The Gold Text Shimmer --- */
+.shimmer-text {
+  animation: shimmerGold 3s linear infinite, fadeInUp 1s ease forwards;
 }
 
-.save-date {
-    display: inline-block;
-    padding: 10px 30px;
-    border: 1px solid #D4AF37;
-    border-radius: 30px;
-    color: #D4AF37;
-    letter-spacing: 4px;
-    margin-bottom: 25px;
-    font-size: clamp(11px, 2vw, 14px);
+@keyframes shimmerGold {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
 }
 
-@media (max-width: 480px) {
-
-    .hero-content {
-        padding: 40px 24px;
-    }
-
-    .hero-content button {
-        padding: 12px 32px;
-        font-size: 15px;
-    }
-
-    .save-date {
-        letter-spacing: 2px;
-        padding: 8px 18px;
-    }
-
+.hero-date {
+  color: #eaddcf;
+  font-size: 1.2rem;
+  letter-spacing: 4px;
 }

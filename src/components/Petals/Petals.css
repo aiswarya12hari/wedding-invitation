@@ -1,0 +1,36 @@
+/* Container sits on top of everything */
+.petals-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none; /* Users can still click buttons beneath the petals */
+  z-index: 50;
+  overflow: hidden;
+}
+
+.petal {
+  position: absolute;
+  top: -40px;
+  background: rgba(225, 180, 200, 0.5); /* Soft rosy pink to match the invitation */
+  border-radius: 50% 0 50% 50%;
+  opacity: 0;
+  box-shadow: 0 0 10px rgba(225, 180, 200, 0.2);
+  animation: fall linear infinite;
+}
+
+/* The falling and rotating animation */
+@keyframes fall {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px) rotate(0deg) scale(0.8);
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(110vh) rotate(720deg) scale(1.2);
+  }
+}
