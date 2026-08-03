@@ -12,7 +12,8 @@
 
 html{
     scroll-behavior:smooth;
-    font-size:100%; /* 1rem = 16px, base for responsive sizing */
+    font-size:100%;
+    overflow-x:hidden;
 }
 
 body{
