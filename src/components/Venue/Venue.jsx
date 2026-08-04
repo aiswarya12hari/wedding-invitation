@@ -14,9 +14,10 @@ function Venue() {
         </h2>
 
         <p className="venue-description">
-          We warmly invite you to celebrate our special day at
-          <strong> Anugraha Kalyanamandapam</strong>,
-          Kodunthirapully, Pirayiri, Palakkad, Kerala.
+          With immense joy, we invite you and your family to be a part of our
+          wedding celebration at <strong>Anugraha Kalyanamandapam</strong>,
+          Kodunthirapully, Pirayiri, Palakkad, Kerala. Your presence and blessings
+          would mean the world to us.
         </p>
 
         <div className="venue-info">
