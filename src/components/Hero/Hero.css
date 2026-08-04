@@ -1,6 +1,6 @@
 .hero-section {
   position: relative;
-  min-height: 100vh;
+  min-height: 110vh;
   overflow: hidden;
 }
 
@@ -11,7 +11,8 @@
   inset: 0;
   background-image: url("../../assets/images/hero.jpg");
   background-size: cover;
-  background-position: center;
+  background-position: center center;
+  background-repeat: no-repeat;
   animation: kenBurns 20s ease-in-out infinite alternate;
   z-index: 0;
 }
@@ -20,13 +21,12 @@
   from {
     transform: scale(1);
   }
-
   to {
-    transform: scale(1.08);
+    transform: scale(1.06);
   }
 }
 
-/* Overlay */
+/* Lighter Overlay */
 .hero-section::after {
   content: "";
   position: absolute;
@@ -34,45 +34,45 @@
   background:
     radial-gradient(
       ellipse at center,
-      rgba(45, 13, 32, 0) 40%,
-      rgba(45, 13, 32, 0.55) 100%
+      rgba(45, 13, 32, 0) 45%,
+      rgba(45, 13, 32, 0.35) 100%
     ),
     linear-gradient(
-      rgba(45, 13, 32, 0.45),
-      rgba(45, 13, 32, 0.15)
+      rgba(45, 13, 32, 0.18),
+      rgba(45, 13, 32, 0.10)
     );
   z-index: 1;
 }
 
-/* =======================
+/* ===========================
    TOP CONTENT
-======================= */
+=========================== */
 
 .hero-top {
   position: absolute;
-  top: 18%;
+  top: 12%;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 2;
   width: 100%;
   text-align: center;
+  z-index: 2;
 }
 
-/* =======================
+/* ===========================
    BOTTOM CONTENT
-======================= */
+=========================== */
 
 .hero-bottom {
   position: absolute;
-  bottom: 10%;
+  bottom: 5%;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 2;
   width: 100%;
   text-align: center;
+  z-index: 2;
 }
 
-/* Animations */
+/* Animation */
 
 .fade-in-up {
   opacity: 0;
@@ -81,19 +81,19 @@
 }
 
 .hero-eyebrow {
-  animation-delay: 0.1s;
+  animation-delay: .1s;
 }
 
 .hero-greeting {
-  animation-delay: 0.3s;
+  animation-delay: .3s;
 }
 
 .hero-title {
-  animation-delay: 0.6s;
+  animation-delay: .6s;
 }
 
 .hero-divider {
-  animation-delay: 0.8s;
+  animation-delay: .8s;
 }
 
 .hero-date {
@@ -111,35 +111,42 @@
 
 .hero-eyebrow {
   color: #d4af37;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   letter-spacing: 8px;
   text-transform: uppercase;
-  margin-bottom: 15px;
+  margin-bottom: 14px;
+  text-shadow: 0 2px 5px rgba(0,0,0,.35);
 }
 
 .hero-greeting {
   color: #f5e6d3;
-  font-size: 1rem;
+  font-size: 1.1rem;
   letter-spacing: 5px;
   text-transform: uppercase;
+  text-shadow: 0 2px 5px rgba(0,0,0,.35);
 }
 
 .hero-title {
   font-family: "Great Vibes", serif;
-  font-size: clamp(3.5rem, 10vw, 5.5rem);
+  font-size: clamp(3rem, 9vw, 5rem);
+  line-height: 1.1;
   font-weight: 400;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 
   background: linear-gradient(
-    to right,
-    #f5e6d3 0%,
-    #d4af37 40%,
-    #f5e6d3 80%
+    90deg,
+    #fff7eb,
+    #d4af37,
+    #fff7eb
   );
 
   background-size: 200% auto;
+
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
+
+  text-shadow: 0 4px 10px rgba(0,0,0,.25);
 }
 
 .shimmer-text {
@@ -152,16 +159,15 @@
   from {
     background-position: 0% center;
   }
-
   to {
     background-position: 200% center;
   }
 }
 
 .hero-divider {
-  width: 60px;
+  width: 90px;
   height: 1px;
-  background: rgba(212, 175, 55, 0.7);
+  background: rgba(212,175,55,.8);
   margin: 0 auto 20px;
 }
 
@@ -169,35 +175,46 @@
   color: #f5e6d3;
   font-size: 1.2rem;
   letter-spacing: 4px;
+  text-shadow: 0 2px 5px rgba(0,0,0,.35);
 }
 
-/* Mobile */
+/* ===========================
+   MOBILE
+=========================== */
 
-@media (max-width: 768px) {
-  .hero-top {
-    top: 16%;
+@media (max-width:768px){
+
+  .hero-section{
+      min-height:110vh;
   }
 
-  .hero-bottom {
-    bottom: 8%;
+  .hero-top{
+      top:12%;
+      padding:0 20px;
   }
 
-  .hero-title {
-    font-size: clamp(3rem, 12vw, 4.5rem);
+  .hero-bottom{
+      bottom:6%;
+      padding:0 20px;
   }
 
-  .hero-eyebrow {
-    font-size: 0.8rem;
-    letter-spacing: 6px;
+  .hero-title{
+      font-size:clamp(3rem,10vw,4.5rem);
+      line-height:1.05;
   }
 
-  .hero-greeting {
-    font-size: 0.9rem;
-    letter-spacing: 3px;
+  .hero-eyebrow{
+      font-size:.85rem;
+      letter-spacing:6px;
   }
 
-  .hero-date {
-    font-size: 1rem;
-    letter-spacing: 3px;
+  .hero-greeting{
+      font-size:.95rem;
+      letter-spacing:3px;
+  }
+
+  .hero-date{
+      font-size:1rem;
+      letter-spacing:3px;
   }
 }

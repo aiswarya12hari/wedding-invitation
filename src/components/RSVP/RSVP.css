@@ -2,7 +2,7 @@
 
 #rsvp {
   min-height: 100vh;
-  background: #2d0d20; 
+  background: #2d0d20;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,7 +21,7 @@
 .rsvp-title {
   font-family: "Great Vibes", "Brush Script MT", cursive;
   font-size: clamp(3.5rem, 10vw, 5rem);
-  color: #cba87b; /* Luxurious Gold */
+  color: #cba87b;
   margin-bottom: 2rem;
   font-weight: 400;
   text-shadow: 0 0 20px rgba(203, 168, 123, 0.15);
@@ -44,14 +44,13 @@
 
 .input-group input {
   width: 100%;
-  /* Glassmorphism Inputs */
   background: rgba(255, 255, 255, 0.07);
   border: 1px solid rgba(203, 168, 123, 0.2);
   border-radius: 12px;
   padding: 16px 20px;
   font-size: 1rem;
   font-family: inherit;
-  color: #f5e6d3; /* Cream text */
+  color: #f5e6d3;
   outline: none;
   transition: all 0.3s ease;
   box-sizing: border-box;
@@ -68,21 +67,37 @@
   background: rgba(255, 255, 255, 0.1);
 }
 
+/* ===========================
+   ATTENDING BUTTONS
+=========================== */
+
 .attending-group {
   display: flex;
-  gap: 15px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
   width: 100%;
 }
 
 .attending-btn {
   flex: 1;
-  padding: 14px 0;
+  min-width: 0;
+
+  padding: 14px 10px;
+
   border-radius: 30px;
   border: 1px solid rgba(255, 255, 255, 0.2);
+
   background: transparent;
   color: #eaddcf;
+
   font-size: 0.9rem;
   font-family: inherit;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -91,7 +106,6 @@
   background: rgba(255, 255, 255, 0.05);
 }
 
-/* Active State for Both Accept and Decline */
 .attending-btn.active-accept,
 .attending-btn.active-decline {
   background: #982b4c;
@@ -100,30 +114,44 @@
   box-shadow: 0 4px 15px rgba(152, 43, 76, 0.3);
 }
 
+/* ===========================
+   SUBMIT BUTTON
+=========================== */
+
 .submit-btn {
   width: 100%;
   padding: 18px;
-  margin-top: 10px;
+  margin-top: 15px;
+
   border: none;
-  background: #982b4c;
-  color: white;
   border-radius: 30px;
+
+  background: linear-gradient(
+    135deg,
+    #d4af37,
+    #b8860b
+  );
+
+  color: #2d0d20;
+
   font-size: 1rem;
   font-weight: 700;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
+  cursor: pointer;
+  transition: all .35s ease;
 }
 
 .submit-btn:hover:not(:disabled) {
-  background: #7a223d;
   transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(212,175,55,.35);
 }
 
 .submit-btn:disabled {
-  opacity: 0.7;
+  opacity: .7;
   cursor: not-allowed;
 }
 
@@ -136,14 +164,55 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* Mobile tweaks */
-@media (max-width: 400px) {
+/* ===========================
+   TABLET
+=========================== */
+
+@media (max-width: 768px) {
+
   .attending-group {
-    flex-direction: column;
     gap: 10px;
   }
+
+  .attending-btn {
+    padding: 13px 8px;
+    font-size: 0.82rem;
+  }
+
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width: 480px) {
+
+  .attending-group {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  .attending-btn {
+    flex: 1;
+    min-width: 0;
+
+    padding: 12px 6px;
+
+    font-size: 0.75rem;
+
+    white-space: nowrap;
+  }
+
 }
