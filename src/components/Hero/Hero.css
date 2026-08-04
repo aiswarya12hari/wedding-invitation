@@ -96,7 +96,7 @@
 
 .shimmer-text {
   animation: shimmerGold 3s linear infinite, fadeInUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  transform: translateY(10px);
+  transform: translateY(60px);
 }
 
 @keyframes shimmerGold {
