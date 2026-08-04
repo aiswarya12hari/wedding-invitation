@@ -31,7 +31,7 @@
   }
 }
 
-/* --- Overlay: lighter tint + soft vignette --- */
+/* --- Overlay --- */
 .hero-section::after {
   content: "";
   position: absolute;
@@ -49,13 +49,18 @@
   z-index: 1;
 }
 
+/* ---------- UPDATED ---------- */
 .hero-content {
   position: relative;
   z-index: 2;
   max-width: 800px;
-}
 
-/* --- Staggered Animation (Fade In Up) --- */
+  /* Move the whole content lower */
+  transform: translateY(170px);
+}
+/* ----------------------------- */
+
+/* --- Fade Animation --- */
 .fade-in-up {
   opacity: 0;
   transform: translateY(30px);
@@ -108,14 +113,10 @@
   margin-bottom: 18px;
 }
 
-/* UPDATED */
 .hero-title {
   font-family: "Great Vibes", "Playfair Display", serif;
   font-size: clamp(3.5rem, 10vw, 5.5rem);
   font-weight: 400;
-
-  /* Added to move the title slightly lower */
-  margin-top: 28px;
 
   margin-bottom: 24px;
 
@@ -142,7 +143,6 @@
   0% {
     background-position: 0% center;
   }
-
   100% {
     background-position: 200% center;
   }
@@ -163,7 +163,21 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+  .hero-content {
+    transform: translateY(130px);
+  }
+
   .hero-title {
-    margin-top: 32px;
+    font-size: clamp(3rem, 12vw, 4.5rem);
+  }
+
+  .hero-greeting {
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+  }
+
+  .hero-date {
+    font-size: 1rem;
+    letter-spacing: 3px;
   }
 }
