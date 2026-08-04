@@ -1,21 +1,15 @@
 .hero-section {
   position: relative;
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 20px;
-  box-sizing: border-box;
   overflow: hidden;
 }
 
-/* --- Ken Burns background layer --- */
+/* Background */
 .hero-section::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url('../../assets/images/hero.jpg');
+  background-image: url("../../assets/images/hero.jpg");
   background-size: cover;
   background-position: center;
   animation: kenBurns 20s ease-in-out infinite alternate;
@@ -23,15 +17,16 @@
 }
 
 @keyframes kenBurns {
-  0% {
+  from {
     transform: scale(1);
   }
-  100% {
+
+  to {
     transform: scale(1.08);
   }
 }
 
-/* --- Overlay --- */
+/* Overlay */
 .hero-section::after {
   content: "";
   position: absolute;
@@ -49,18 +44,36 @@
   z-index: 1;
 }
 
-/* ---------- UPDATED ---------- */
-.hero-content {
-  position: relative;
+/* =======================
+   TOP CONTENT
+======================= */
+
+.hero-top {
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 2;
-  max-width: 800px;
-
-  /* Move the whole content lower */
-  transform: translateY(170px);
+  width: 100%;
+  text-align: center;
 }
-/* ----------------------------- */
 
-/* --- Fade Animation --- */
+/* =======================
+   BOTTOM CONTENT
+======================= */
+
+.hero-bottom {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  width: 100%;
+  text-align: center;
+}
+
+/* Animations */
+
 .fade-in-up {
   opacity: 0;
   transform: translateY(30px);
@@ -72,19 +85,19 @@
 }
 
 .hero-greeting {
-  animation-delay: 0.4s;
+  animation-delay: 0.3s;
 }
 
 .hero-title {
-  animation-delay: 0.7s;
+  animation-delay: 0.6s;
 }
 
 .hero-divider {
-  animation-delay: 1s;
+  animation-delay: 0.8s;
 }
 
 .hero-date {
-  animation-delay: 1.2s;
+  animation-delay: 1s;
 }
 
 @keyframes fadeInUp {
@@ -94,31 +107,28 @@
   }
 }
 
-/* --- Typography --- */
+/* Typography */
 
 .hero-eyebrow {
   color: #d4af37;
   font-size: 0.85rem;
   letter-spacing: 8px;
   text-transform: uppercase;
-  margin-bottom: 14px;
-  font-weight: 500;
+  margin-bottom: 15px;
 }
 
 .hero-greeting {
-  color: #eaddcf;
-  font-size: 1.05rem;
+  color: #f5e6d3;
+  font-size: 1rem;
   letter-spacing: 5px;
   text-transform: uppercase;
-  margin-bottom: 18px;
 }
 
 .hero-title {
-  font-family: "Great Vibes", "Playfair Display", serif;
+  font-family: "Great Vibes", serif;
   font-size: clamp(3.5rem, 10vw, 5.5rem);
   font-weight: 400;
-
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 
   background: linear-gradient(
     to right,
@@ -126,24 +136,24 @@
     #d4af37 40%,
     #f5e6d3 80%
   );
-  background-size: 200% auto;
 
+  background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 .shimmer-text {
   animation:
     shimmerGold 3s linear infinite,
-    fadeInUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    fadeInUp 1.2s forwards;
 }
 
 @keyframes shimmerGold {
-  0% {
+  from {
     background-position: 0% center;
   }
-  100% {
+
+  to {
     background-position: 200% center;
   }
 }
@@ -151,24 +161,34 @@
 .hero-divider {
   width: 60px;
   height: 1px;
-  background: rgba(212, 175, 55, 0.6);
-  margin: 0 auto 24px;
+  background: rgba(212, 175, 55, 0.7);
+  margin: 0 auto 20px;
 }
 
 .hero-date {
-  color: #eaddcf;
+  color: #f5e6d3;
   font-size: 1.2rem;
   letter-spacing: 4px;
 }
 
-/* Responsive */
+/* Mobile */
+
 @media (max-width: 768px) {
-  .hero-content {
-    transform: translateY(130px);
+  .hero-top {
+    top: 16%;
+  }
+
+  .hero-bottom {
+    bottom: 8%;
   }
 
   .hero-title {
     font-size: clamp(3rem, 12vw, 4.5rem);
+  }
+
+  .hero-eyebrow {
+    font-size: 0.8rem;
+    letter-spacing: 6px;
   }
 
   .hero-greeting {
