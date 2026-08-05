@@ -1,5 +1,6 @@
 import "./Envelope.css";
 import envelopeImg from "../../assets/images/envelope.png";
+import { FaChevronDown } from "react-icons/fa";
 
 function Envelope({ onOpen }) {
   return (
@@ -12,9 +13,13 @@ function Envelope({ onOpen }) {
         onClick={onOpen}
       />
 
-      <p className="tap-text">
-        TAP TO OPEN
-      </p>
+      <div className="tap-container">
+        <FaChevronDown className="down-arrow" />
+
+        <p className="tap-text">
+          TAP TO OPEN
+        </p>
+      </div>
 
     </div>
   );
