@@ -1,11 +1,11 @@
 import "./Envelope.css";
 import envelopeImg from "../../assets/images/envelope.png";
-import { FaChevronDown } from "react-icons/fa";
+import handClick from "../../assets/images/hand_click.png";
 
 function Envelope({ onOpen }) {
   return (
     <div className="envelope-screen">
-
+      {/* Envelope */}
       <img
         src={envelopeImg}
         alt="Wedding Invitation"
@@ -13,14 +13,15 @@ function Envelope({ onOpen }) {
         onClick={onOpen}
       />
 
-      <div className="tap-container">
-        <FaChevronDown className="down-arrow" />
-
-        <p className="tap-text">
-          TAP TO OPEN
-        </p>
+      {/* Animated Hand */}
+      <div className="tap-indicator">
+        <img
+          src={handClick}
+          alt="Tap to Open"
+          className="hand-click"
+          onClick={onOpen}
+        />
       </div>
-
     </div>
   );
 }

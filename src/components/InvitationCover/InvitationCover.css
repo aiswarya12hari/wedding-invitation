@@ -1,57 +1,168 @@
-/* src/components/InvitationCover/InvitationCover.css */
 .invitation-cover-wrapper {
   position: relative;
-  width: 100vw;  /* 100% of the viewport width */
-  height: 100vh; /* 100% of the viewport height */
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
+  background: #1d1b20;
 }
 
+/* ==========================
+   ENVELOPE
+========================== */
+
 .envelope-image {
-  /* This is the crucial part for full-screen: */
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Zooms in slightly to avoid stretching the image */
-  object-position: center; /* Ensures the wax seal stays perfectly centered! */
+  object-fit: cover;
+  object-position: center;
   display: block;
 }
 
+/* ==========================
+   INVISIBLE CLICK AREA
+========================== */
+
 .open-envelope-button {
-  /* Absolute centering over the wax seal */
   position: absolute;
-  top: 50%; 
+
+  top: 50%;
   left: 50%;
+
   transform: translate(-50%, -50%);
-  
-  /* Size to cover the wax seal. 
-     Using relative percentages is better than fixed pixels for mobile */
-  width: 45%; 
-  aspect-ratio: 1 / 1; /* Keeps it a perfect circle on any screen */
-  
+
+  width: 220px;
+  height: 220px;
+
   background: transparent;
   border: none;
   border-radius: 50%;
+
   cursor: pointer;
-  z-index: 10; /* Sits above the image */
-  touch-action: manipulation; /* Prevents double-tap zoom on mobile */
+
+  z-index: 5;
 }
 
-/* Hover and Active effects (keep these as they were) */
-.open-envelope-button:hover {
-  transform: translate(-50%, -50%) scale(1.08);
-  box-shadow: 0 0 30px 15px rgba(255, 215, 0, 0.2);
+/* ==========================
+   HAND
+========================== */
+
+.hand-click {
+
+  position: absolute;
+
+  top: calc(50% + 90px);
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 95px;
+
+  cursor: pointer;
+
+  z-index: 20;
+
+  animation: tapAnimation 1.4s ease-in-out infinite;
+
+  filter:
+    drop-shadow(0 8px 12px rgba(0,0,0,.35))
+    drop-shadow(0 0 10px rgba(255,255,255,.15));
+
 }
 
-.open-envelope-button:active {
-  transform: translate(-50%, -50%) scale(0.95);
+/* ==========================
+   TEXT
+========================== */
+
+.tap-text {
+
+  position: absolute;
+
+  top: calc(50% + 190px);
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  color: #ffffff;
+
+  font-size: 18px;
+
+  letter-spacing: 4px;
+
+  font-weight: 600;
+
+  z-index: 20;
+
+  animation: textBlink 1.4s infinite;
+
+  pointer-events: none;
+
 }
 
-.button-text {
-  font-family: 'Playfair Display', serif; /* Ensure you have this font loaded */
-  font-size: clamp(0.8rem, 2.5vw, 1.4rem); /* Responsive font size */
-  letter-spacing: 2px;
-  color: #f5e6d3; /* Cream */
-  text-transform: uppercase;
-  font-weight: 700;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-  pointer-events: none; 
+/* ==========================
+   ANIMATION
+========================== */
+
+@keyframes tapAnimation {
+
+  0% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  30% {
+    transform: translateX(-50%) translateY(-12px) scale(.95);
+  }
+
+  60% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+}
+
+@keyframes textBlink {
+
+  0%,100%{
+    opacity:.5;
+  }
+
+  50%{
+    opacity:1;
+  }
+
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media (max-width:768px){
+
+  .open-envelope-button{
+
+      width:160px;
+      height:160px;
+
+  }
+
+  .hand-click{
+
+      width:80px;
+
+      top:calc(50% + 70px);
+
+  }
+
+  .tap-text{
+
+      top:calc(50% + 155px);
+
+      font-size:15px;
+
+      letter-spacing:3px;
+
+  }
+
 }

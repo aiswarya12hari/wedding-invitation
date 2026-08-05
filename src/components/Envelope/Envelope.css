@@ -7,6 +7,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  overflow: hidden;
 }
 
 /* ==========================
@@ -16,129 +18,83 @@
 .envelope-image {
   width: 700px;
   max-width: 90%;
+  max-height: 65vh;
+  object-fit: contain;
+
   cursor: pointer;
-  transition: all .4s ease;
+
+  transition: transform .4s ease;
 }
 
 .envelope-image:hover {
-  transform: scale(1.04);
+  transform: scale(1.03);
 }
 
 /* ==========================
-   TAP SECTION
+   HAND
 ========================== */
 
-.tap-container {
+.tap-indicator {
+
+  margin-top: -80px;     /* Move hand upward */
+
+  position: relative;
+  z-index: 10;
+
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin-top: 28px;
+}
+
+.hand-click {
+
+  width: 95px;
+
+  cursor: pointer;
+
+  user-select: none;
+
+  animation: tapAnimation 1.5s ease-in-out infinite;
+
+  filter:
+    drop-shadow(0 8px 10px rgba(0,0,0,.35))
+    drop-shadow(0 0 8px rgba(255,255,255,.15));
+
+  transition: transform .3s ease;
+}
+
+.hand-click:hover{
+    transform: scale(1.08);
 }
 
 /* ==========================
-   DOWN ARROW
+   ANIMATION
 ========================== */
 
-.down-arrow {
-  font-size: 36px;
-
-  background: linear-gradient(
-    180deg,
-    #fff8e7,
-    #d4af37,
-    #b8860b
-  );
-
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  filter: drop-shadow(0 0 10px rgba(212,175,55,.45));
-
-  animation:
-    arrowBounce 1.5s ease-in-out infinite,
-    arrowGlow 2.5s ease-in-out infinite;
-}
-
-/* ==========================
-   TAP TEXT
-========================== */
-
-.tap-text {
-
-  margin-top: 12px;
-
-  color: #d4af37;
-
-  font-size: 18px;
-
-  font-weight: 500;
-
-  letter-spacing: 6px;
-
-  text-transform: uppercase;
-
-  text-shadow:
-    0 0 10px rgba(212,175,55,.35);
-
-  animation: textFade 2s ease-in-out infinite;
-}
-
-/* ==========================
-   ARROW BOUNCE
-========================== */
-
-@keyframes arrowBounce {
+@keyframes tapAnimation {
 
   0% {
-    transform: translateY(-6px);
+    transform: translateY(0px) scale(1);
   }
 
-  50% {
-    transform: translateY(8px);
+  20% {
+    transform: translateY(-8px) scale(.95);
+  }
+
+  40% {
+    transform: translateY(0px) scale(1);
+  }
+
+  60% {
+    transform: translateY(-8px) scale(.95);
+  }
+
+  80% {
+    transform: translateY(0px) scale(1);
   }
 
   100% {
-    transform: translateY(-6px);
-  }
-
-}
-
-/* ==========================
-   ARROW GLOW
-========================== */
-
-@keyframes arrowGlow {
-
-  0% {
-    filter: drop-shadow(0 0 6px rgba(212,175,55,.2));
-  }
-
-  50% {
-    filter: drop-shadow(0 0 18px rgba(212,175,55,.7));
-  }
-
-  100% {
-    filter: drop-shadow(0 0 6px rgba(212,175,55,.2));
-  }
-
-}
-
-/* ==========================
-   TAP TEXT ANIMATION
-========================== */
-
-@keyframes textFade {
-
-  0% {
-    opacity: .55;
-  }
-
-  50% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: .55;
+    transform: translateY(0px) scale(1);
   }
 
 }
@@ -149,13 +105,23 @@
 
 @media (max-width:768px){
 
-  .down-arrow{
-      font-size:32px;
+  .envelope-image{
+
+      width:95%;
+      max-height:70vh;
+
   }
 
-  .tap-text{
-      font-size:16px;
-      letter-spacing:5px;
+  .tap-indicator{
+
+      margin-top:-70px;
+
+  }
+
+  .hand-click{
+
+      width:85px;
+
   }
 
 }

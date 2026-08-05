@@ -1,22 +1,38 @@
-import React from 'react';
-import './InvitationCover.css';
-import envelopeImg from '../../assets/images/envelope.png'; 
+import React from "react";
+import "./InvitationCover.css";
+
+import envelopeImg from "../../assets/images/envelope.png";
+import handClick from "../../assets/images/hand_click.png";
 
 const InvitationCover = ({ onOpen }) => {
   return (
     <div className="invitation-cover-wrapper">
-      <img 
-        src={envelopeImg} 
-        alt="Wedding Invitation Envelope" 
-        className="envelope-image" 
+      {/* Envelope */}
+      <img
+        src={envelopeImg}
+        alt="Wedding Invitation Envelope"
+        className="envelope-image"
       />
-      <button 
-        className="open-envelope-button" 
+
+      {/* Invisible click area */}
+      <button
+        className="open-envelope-button"
         onClick={onOpen}
         aria-label="Tap to open invitation"
-      >
-        <span className="button-text">TAP TO OPEN</span>
-      </button>
+      />
+
+      {/* Animated Hand */}
+      <img
+        src={handClick}
+        alt="Tap to Open"
+        className="hand-click"
+        onClick={onOpen}
+      />
+
+      {/* Optional Text */}
+      <div className="tap-text">
+        TAP TO OPEN
+      </div>
     </div>
   );
 };
